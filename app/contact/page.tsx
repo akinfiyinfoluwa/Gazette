@@ -1,4 +1,5 @@
 import { genPageMetadata } from 'app/seo'
+import ContactForm from '@/components/ContactForm'
 
 export const metadata = genPageMetadata({ title: 'Contact' })
 
@@ -15,8 +16,21 @@ export default function Contact() {
           </p>
         </div>
         <div className="container py-12">
-          <div className="-m-4 flex flex-wrap">
-            <p>This is where your contact form or information will go.</p>
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
+            <div>
+              <ContactForm />
+            </div>
+            <div className="space-y-4">
+              <h2 className="text-2xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-100">
+                Our Address
+              </h2>
+              <div className="text-gray-500 dark:text-gray-400">
+                <p>123 Main Street</p>
+                <p>Anytown, USA 12345</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@example.com</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
