@@ -4,7 +4,7 @@ import siteMetadata from '@/data/siteMetadata'
 interface PageSEOProps {
   title: string
   description?: string
-  image?: string
+  image: string
   [key: string]: any
 }
 
@@ -17,14 +17,14 @@ export function genPageMetadata({ title, description, image, ...rest }: PageSEOP
       description: description || siteMetadata.description,
       url: './',
       siteName: siteMetadata.title,
-      images: image ? [image] : [siteMetadata.socialBanner],
+      images: [image],
       locale: 'en_US',
       type: 'website',
     },
     twitter: {
       title: `${title} | ${siteMetadata.title}`,
       card: 'summary_large_image',
-      images: image ? [image] : [siteMetadata.socialBanner],
+      images: [image],
     },
     ...rest,
   }

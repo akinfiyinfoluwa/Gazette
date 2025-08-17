@@ -23,7 +23,7 @@ export default function Home({ posts }) {
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((post) => {
             const { slug, date, title, summary, tags, images } = post
-            const featuredImage = images && images.length > 0 ? images[0] : '/static/images/twitter-card.png'
+            const featuredImage = images[0]
             return (
               <li key={slug} className="py-12">
                 <article>
