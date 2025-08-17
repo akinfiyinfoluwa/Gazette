@@ -1,7 +1,13 @@
 import { genPageMetadata } from 'app/seo'
 import ContactForm from '@/components/ContactForm'
 
-export const metadata = genPageMetadata({ title: 'Contact' })
+import siteMetadata from '@/data/siteMetadata'
+
+export const metadata = genPageMetadata({
+  title: 'Contact',
+  description: 'Contact us for more information',
+  image: siteMetadata.socialBanner,
+})
 
 export default function Contact() {
   return (

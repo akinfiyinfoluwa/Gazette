@@ -17,6 +17,7 @@ export async function generateMetadata(props: {
   return genPageMetadata({
     title: tag,
     description: `${siteMetadata.title} ${tag} tagged content`,
+    image: siteMetadata.socialBanner,
     alternates: {
       canonical: './',
       types: {
