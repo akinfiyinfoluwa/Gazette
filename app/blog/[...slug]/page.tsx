@@ -12,6 +12,7 @@ import PostLayout from '@/layouts/PostLayout'
 import PostBanner from '@/layouts/PostBanner'
 import CommentSection from '@/components/CommentSection'
 import LikeButton from '@/components/LikeButton'
+import ShareButton from '@/components/shareButton'
 import { Metadata } from 'next'
 import siteMetadata from '@/data/siteMetadata'
 import { notFound } from 'next/navigation'
@@ -113,8 +114,14 @@ export default async function Page(props: { params: Promise<{ slug: string[] }> 
       />
       <Layout content={mainContent} authorDetails={authorDetails} next={next} prev={prev}>
         <MDXLayoutRenderer code={post.body.code} components={components} toc={post.toc} />
-        <div className="mt-8">
+        <div className="mt-8 flex items-center space-x-4">
           <LikeButton />
+        </div>
+        <div className="mt-4">
+          <ShareButton
+            url={`${siteMetadata.siteUrl}/blog/${post.slug}`}
+            title={post.title}
+          />
         </div>
         <CommentSection />
       </Layout>
